@@ -7,7 +7,7 @@ INCLUDEPATH += /usr/include
 
 LIBS += -L/usr/lib -lSDL2 -lSDL2_image
 
-SOURCES += src/main.cpp
+SOURCES += main.cpp
 
 HEADERS += \
     includes/constants.h
