@@ -15,10 +15,10 @@ CXX           = g++
 DEFINES       = -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -D_REENTRANT -Wall -W -fPIE $(DEFINES)
 CXXFLAGS      = -pipe -g -D_REENTRANT -Wall -W -fPIE $(DEFINES)
-INCPATH       = -I/home/grrwood/Qt/5.3/gcc_64/mkspecs/linux-g++ -I../../converions -I/home/grrwood/Qt/5.3/gcc_64/include -I/home/grrwood/Qt/5.3/gcc_64/include/QtXml -I/home/grrwood/Qt/5.3/gcc_64/include/QtGui -I/home/grrwood/Qt/5.3/gcc_64/include/QtCore -I. -I.
+INCPATH       = -I/home/grrwood/Qt/5.3/gcc_64/mkspecs/linux-g++ -I../../converions -I/usr/include -I/home/grrwood/Qt/5.3/gcc_64/include -I/home/grrwood/Qt/5.3/gcc_64/include/QtXml -I/home/grrwood/Qt/5.3/gcc_64/include/QtGui -I/home/grrwood/Qt/5.3/gcc_64/include/QtCore -I. -I.
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/home/grrwood/Qt/5.3/gcc_64 -Wl,-rpath,/home/grrwood/Qt/5.3/gcc_64/lib
-LIBS          = $(SUBLIBS) -LC:/usr/local/lib -lSDL2 -lSDL2_image -L/home/grrwood/Qt/5.3/gcc_64/lib -lQt5Xml -lQt5Gui -lQt5Core -lGL -lpthread 
+LIBS          = $(SUBLIBS) -L/usr/lib -lSDL2 -lSDL2_image -L/home/grrwood/Qt/5.3/gcc_64/lib -lQt5Xml -lQt5Gui -lQt5Core -lGL -lpthread 
 AR            = ar cqs
 RANLIB        = 
 QMAKE         = /home/grrwood/Qt/5.3/gcc_64/bin/qmake
@@ -451,7 +451,74 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../src/main.cpp 
+main.o: ../src/main.cpp /usr/include/SDL2/SDL.h \
+		/usr/include/SDL2/SDL_main.h \
+		/usr/include/SDL2/SDL_stdinc.h \
+		/usr/include/SDL2/SDL_config.h \
+		/usr/include/SDL2/SDL_platform.h \
+		/usr/include/SDL2/begin_code.h \
+		/usr/include/SDL2/close_code.h \
+		/usr/include/stdio.h \
+		/usr/include/features.h \
+		/usr/include/stdc-predef.h \
+		/usr/include/libio.h \
+		/usr/include/_G_config.h \
+		/usr/include/wchar.h \
+		/usr/include/wctype.h \
+		/usr/include/endian.h \
+		/usr/include/xlocale.h \
+		/usr/include/gconv.h \
+		/usr/include/getopt.h \
+		/usr/include/ctype.h \
+		/usr/include/stdlib.h \
+		/usr/include/alloca.h \
+		/usr/include/malloc.h \
+		/usr/include/memory.h \
+		/usr/include/string.h \
+		/usr/include/strings.h \
+		/usr/include/inttypes.h \
+		/usr/include/stdint.h \
+		/usr/include/math.h \
+		/usr/include/iconv.h \
+		/usr/include/SDL2/SDL_assert.h \
+		/usr/include/signal.h \
+		/usr/include/time.h \
+		/usr/include/SDL2/SDL_atomic.h \
+		/usr/include/SDL2/SDL_audio.h \
+		/usr/include/SDL2/SDL_error.h \
+		/usr/include/SDL2/SDL_endian.h \
+		/usr/include/SDL2/SDL_mutex.h \
+		/usr/include/SDL2/SDL_thread.h \
+		/usr/include/SDL2/SDL_rwops.h \
+		/usr/include/SDL2/SDL_clipboard.h \
+		/usr/include/SDL2/SDL_cpuinfo.h \
+		/usr/include/SDL2/SDL_events.h \
+		/usr/include/SDL2/SDL_video.h \
+		/usr/include/SDL2/SDL_pixels.h \
+		/usr/include/SDL2/SDL_rect.h \
+		/usr/include/SDL2/SDL_surface.h \
+		/usr/include/SDL2/SDL_blendmode.h \
+		/usr/include/SDL2/SDL_keyboard.h \
+		/usr/include/SDL2/SDL_keycode.h \
+		/usr/include/SDL2/SDL_scancode.h \
+		/usr/include/SDL2/SDL_mouse.h \
+		/usr/include/SDL2/SDL_joystick.h \
+		/usr/include/SDL2/SDL_gamecontroller.h \
+		/usr/include/SDL2/SDL_quit.h \
+		/usr/include/SDL2/SDL_gesture.h \
+		/usr/include/SDL2/SDL_touch.h \
+		/usr/include/SDL2/SDL_filesystem.h \
+		/usr/include/SDL2/SDL_haptic.h \
+		/usr/include/SDL2/SDL_hints.h \
+		/usr/include/SDL2/SDL_loadso.h \
+		/usr/include/SDL2/SDL_log.h \
+		/usr/include/SDL2/SDL_messagebox.h \
+		/usr/include/SDL2/SDL_power.h \
+		/usr/include/SDL2/SDL_render.h \
+		/usr/include/SDL2/SDL_system.h \
+		/usr/include/SDL2/SDL_timer.h \
+		/usr/include/SDL2/SDL_version.h \
+		/usr/include/SDL2/SDL_image.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../src/main.cpp
 
 ####### Install

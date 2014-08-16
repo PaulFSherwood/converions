@@ -3,7 +3,9 @@ CONFIG += console
 CONFIG += qt
 QT     += xml
 
-LIBS += -LC:/usr/local/lib -lSDL2 -lSDL2_image
+INCLUDEPATH += /usr/include
+
+LIBS += -L/usr/lib -lSDL2 -lSDL2_image
 
 SOURCES += src/main.cpp
 
